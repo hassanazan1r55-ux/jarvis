@@ -1,0 +1,12 @@
+{
+  "name": "Azan · Developer Portfolio",
+  "short_name": "Azan.dev",
+  "description": "Projects, skills and contact for Azan, a student developer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#02060d",
+  "theme_color": "#02060d",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
