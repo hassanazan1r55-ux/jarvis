@@ -1,4 +1,4 @@
-# Azan · Portfolio
+# Portfolio
 
 Hand-written static site in HTML, CSS and JavaScript. No framework, no build step.
 Works on Vercel and GitHub Pages as it is.
