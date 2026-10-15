@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>ARIA Case Study · Student Developer Portfolio</title>
+<meta name="description" content="A project case study for ARIA, a browser-based neural-interface concept built with HTML, CSS and vanilla JavaScript.">
+<link rel="canonical" href="https://jarvis-delta-gray.vercel.app/projects/aria/case-study.html">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem("portfolio-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){document.documentElement.dataset.theme="dark"}})();</script>
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="stylesheet" href="case-study.css">
+</head>
+<body class="case-body">
+<a class="skip" href="#case-main">Skip to case study</a>
+<header class="case-nav"><a class="logo" href="../../index.html"><span class="mark" aria-hidden="true"></span>Portfolio</a><a class="case-back" href="../../index.html#projects">← Back to portfolio</a></header>
+<main id="case-main" class="case-main">
+<section class="case-hero">
+<p class="eyebrow">PROJECT CASE STUDY · BROWSER EXPERIENCE</p>
+<h1>ARIA <span class="grad">Neural Interface</span></h1>
+<p class="case-lead">A Jarvis-inspired heads-up display concept, designed as an interactive browser experience using plain HTML, CSS and JavaScript.</p>
+<div class="case-actions"><a class="btn primary" href="./">Launch ARIA HUD</a><a class="btn ghost" href="https://github.com/hassanazan1r55-ux" target="_blank" rel="noopener noreferrer">GitHub profile</a></div>
+<ul class="case-facts" aria-label="Project details"><li><span>Type</span><strong>Interactive web interface</strong></li><li><span>Stack</span><strong>HTML · CSS · JavaScript</strong></li><li><span>Build approach</span><strong>No framework or build step</strong></li></ul>
+</section>
+<section class="case-section" aria-labelledby="overview-title">
+<h2 id="overview-title">Overview</h2>
+<p>ARIA explores the visual language of a futuristic command centre while keeping the experience self-contained in the browser. Its interface combines a central animated reactor, surrounding telemetry panels, radar and hologram visuals, and a command console.</p>
+<figure class="case-shot">
+<div class="shot-placeholder"><span class="shot-icon" aria-hidden="true">+</span><strong>Screenshot slot</strong><span>Add a real screenshot at <code>projects/aria/assets/aria-screenshot.webp</code>.</span></div>
+<img src="assets/aria-screenshot.webp" alt="Screenshot of the ARIA neural interface HUD" loading="lazy" width="1200" height="750" onerror="this.hidden=true">
+<figcaption>Project preview — replace the image with a real capture of the current ARIA interface.</figcaption>
+</figure>
+</section>
+<section class="case-section case-columns">
+<div><h2>What I built</h2><ul class="case-list"><li>A responsive HUD layout with telemetry and status panels.</li><li>Canvas-based radar, animated background particles, waveform and rotating hologram.</li><li>A text command interface with preset commands and optional speech input/output where browser support allows.</li><li>Audio synthesis controls, colour themes and a cinematic startup sequence.</li></ul></div>
+<div><h2>Technology used</h2><ul class="case-tags"><li>HTML</li><li>CSS animations</li><li>Vanilla JavaScript</li><li>Canvas 2D</li><li>Web Audio API</li><li>Web Speech APIs</li></ul><p class="case-muted">Browser permissions and API availability vary by device. Telemetry shown in the HUD is illustrative interface data, not a system diagnostic tool.</p></div>
+</section>
+<section class="case-section">
+<h2>What I learned</h2>
+<p>[FILL_ARIA_LEARNINGS: add two or three specific lessons from building this project, such as a real performance problem you solved, an accessibility improvement, or a JavaScript concept you now understand better.]</p>
+</section>
+<section class="case-next"><div><p class="eyebrow">NEXT STEP</p><h2>Explore the live interface</h2><p>Open the interactive HUD, then return here for the project overview.</p></div><a class="btn primary" href="./">Launch ARIA <span aria-hidden="true">→</span></a></section>
+</main>
+<footer class="case-footer"><span>Portfolio · Project case study</span><a href="../../index.html#projects">All projects</a></footer>
+<script>
+(function(){var toggle=document.createElement('button');toggle.type='button';toggle.className='icon-btn case-theme';toggle.textContent=document.documentElement.dataset.theme==='light'?'Dark':'Light';toggle.setAttribute('aria-label','Toggle colour theme');toggle.addEventListener('click',function(){var t=document.documentElement.dataset.theme==='light'?'dark':'light';document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t;toggle.textContent=t==='light'?'Dark':'Light';try{localStorage.setItem('portfolio-theme',t)}catch(e){}});document.querySelector('.case-nav').appendChild(toggle)})();
+</script>
+</body>
+</html>
