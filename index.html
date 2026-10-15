@@ -5,13 +5,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Student Developer · Portfolio</title>
 <meta name="description" content="Portfolio of a student developer building clean, fast interfaces for the web and learning C and cybersecurity.">
-<meta name="theme-color" content="#05080f">
+<meta name="theme-color" content="#05080f" id="theme-color-meta">
+<meta property="og:image" content="https://jarvis-delta-gray.vercel.app/assets/og-preview.svg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script>(function(){try{var t=localStorage.getItem("portfolio-theme");if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){document.documentElement.dataset.theme="dark"}})();</script>
 <link rel="canonical" href="https://jarvis-delta-gray.vercel.app/">
 <meta property="og:title" content="Student Developer · Portfolio">
 <meta property="og:description" content="Clean, fast interfaces for the web. Projects, skills and contact.">
 <meta property="og:type" content="website">
+<meta property="og:image:alt" content="Minimal cyan and blue portfolio preview">
 <meta property="og:url" content="https://jarvis-delta-gray.vercel.app/">
-<meta name="twitter:card" content="summary">
+
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,8 +44,11 @@
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a href="#learning">Learning log</a>
+    <a href="#resume">Resume</a>
     <a href="#about">About</a>
   </nav>
+  <div class="nav-tools"><button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light theme" title="Toggle colour theme"><span aria-hidden="true" id="theme-icon">☼</span></button><button class="icon-btn palette-trigger" id="palette-open" type="button" aria-keyshortcuts="Control+K Meta+K" aria-label="Open command palette" title="Command palette (Ctrl/Cmd + K)">⌘K</button></div>
   <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><i></i><i></i><i></i></button>
 </header>
 
@@ -101,7 +109,7 @@
       <h3>ARIA · Neural Interface</h3>
       <p>A Jarvis-style heads-up display built with plain HTML, CSS and JavaScript. It includes a synthesized sound engine, voice commands, a radar, a hologram and four colour themes.</p>
       <ul class="tags"><li>JavaScript</li><li>Web Audio</li><li>Canvas</li></ul>
-      <a class="more" href="projects/aria/">Open project <b aria-hidden="true">→</b></a>
+      <div class="project-actions"><a class="more" href="projects/aria/">Open live project <b aria-hidden="true">→</b></a><a class="more" href="projects/aria/case-study.html">Read case study <b aria-hidden="true">→</b></a></div>
     </article>
     <article class="card" data-reveal data-spot>
       <div class="meta"><span>Website</span><span>Live</span></div>
@@ -111,6 +119,22 @@
       <a class="more" href="https://github.com/hassanazan1r55-ux/jarvis" target="_blank" rel="noopener">View source <b aria-hidden="true">→</b></a>
     </article>
   </div>
+  <div class="github-projects" id="github-projects" aria-live="polite" aria-busy="true"><p class="section-note" id="github-status">Loading public repositories…</p></div>
+</section>
+
+<section id="resume" class="sec compact-sec">
+  <h2 class="st" data-reveal>Resume</h2>
+  <div class="resume-panel" data-reveal><div><p class="eyebrow">BACKGROUND & EXPERIENCE</p><h3>A concise overview of my work and learning.</h3><p class="section-note">The PDF is optional. Add your resume at <code>assets/resume.pdf</code> when it is ready.</p></div><a class="btn primary" id="resume-link" href="assets/resume.pdf" download>Download resume</a><p class="note" id="resume-note" role="status" aria-live="polite"></p></div>
+</section>
+
+<section id="learning" class="sec">
+  <h2 class="st" data-reveal>Learning log</h2>
+  <p class="section-note log-intro">A short record of progress. Replace each clearly marked sample with a real milestone.</p>
+  <ol class="timeline" id="learning-timeline">
+    <li data-reveal><span class="timeline-date">[FILL_DATE_1]</span><div><h3>[SAMPLE — replace with a real milestone]</h3><p>[FILL_MILESTONE_1: what you built or learned, and what changed because of it.]</p></div></li>
+    <li data-reveal><span class="timeline-date">[FILL_DATE_2]</span><div><h3>[SAMPLE — replace with a real milestone]</h3><p>[FILL_MILESTONE_2: a concrete project, concept, or problem you worked through.]</p></div></li>
+    <li data-reveal><span class="timeline-date">[FILL_DATE_3]</span><div><h3>[SAMPLE — replace with a real milestone]</h3><p>[FILL_MILESTONE_3: what you learned and what you plan to practise next.]</p></div></li>
+  </ol>
 </section>
 
 <section id="contact" class="sec">
@@ -123,11 +147,15 @@
         <li><a href="https://github.com/hassanazan1r55-ux" target="_blank" rel="noopener">github.com/hassanazan1r55-ux</a></li>
       </ul>
     </div>
-    <form id="form" data-reveal novalidate>
-      <label>Name<input id="fn" type="text" required autocomplete="name"></label>
-      <label>Message<textarea id="fm" rows="5" required></textarea></label>
-      <button class="btn primary" type="submit" data-magnet>Send message</button>
-      <p class="note" id="note" role="status"></p>
+    <form id="form" data-reveal>
+      <label for="fn">Name<input id="fn" name="name" type="text" required autocomplete="name" maxlength="120"></label>
+      <label for="femail">Email<input id="femail" name="email" type="email" required autocomplete="email" maxlength="254"></label>
+      <label for="fsubject">Subject<input id="fsubject" name="subject" type="text" required maxlength="160"></label>
+      <label for="fm">Message<textarea id="fm" name="message" rows="5" required maxlength="5000"></textarea></label>
+      <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty<input id="website" name="_gotcha" type="text" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn primary" id="send-message" type="submit" data-magnet><span class="button-label">Send message</span></button>
+      <p class="note" id="note" role="status" aria-live="polite"></p>
+      <p class="form-fallback">Prefer email? <a href="mailto:hassanazan1r55@gmail.com">Open your mail app</a>.</p>
     </form>
   </div>
 </section>
@@ -149,7 +177,15 @@
 </section>
 </main>
 
-<footer class="foot"><span>© <span id="yr"></span></span><a href="#home">Back to top</a></footer>
-<script src="js/main.js"></script>
+<footer class="foot"><span>© <span id="yr"></span> · Portfolio</span><div class="footer-links"><a href="https://github.com/hassanazan1r55-ux" target="_blank" rel="noopener noreferrer">GitHub</a><a href="#home">Back to top</a></div></footer>
+<div class="intro-loader" id="intro-loader" aria-hidden="true"><span class="loader-mark"></span><span class="loader-label">INITIALIZING PORTFOLIO</span></div>
+<div class="palette-backdrop" id="palette-backdrop" hidden></div>
+<section class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="palette-title" hidden>
+  <div class="palette-head"><label id="palette-title" for="palette-input">Command palette</label><kbd>ESC</kbd></div>
+  <input id="palette-input" type="search" placeholder="Jump to a section or run a command…" autocomplete="off" spellcheck="false">
+  <div class="palette-results" id="palette-results" role="listbox" aria-label="Commands"></div>
+  <p class="palette-hint"><kbd>↑</kbd> <kbd>↓</kbd> to navigate <kbd>Enter</kbd> to select</p>
+</section>
+<script src="js/main.js" defer></script>
 </body>
 </html>
