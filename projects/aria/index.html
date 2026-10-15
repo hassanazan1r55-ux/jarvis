@@ -177,9 +177,14 @@ body.alert:after{content:"";position:fixed;inset:0;z-index:60;pointer-events:non
   .brand span{display:none}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+.portfolio-return{position:fixed;top:16px;left:18px;z-index:110;display:inline-flex;align-items:center;min-height:42px;padding:9px 14px;border:1px solid rgba(56,232,255,.5);background:rgba(2,6,13,.88);color:#d8f6ff;text-decoration:none;font:600 12px "Share Tech Mono",monospace;letter-spacing:.08em;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
+.portfolio-return:hover{background:rgba(56,232,255,.15);border-color:#38e8ff}
+@media(prefers-reduced-motion:reduce){.portfolio-return{transition:none}}
 </style>
 </head>
 <body>
+<a class="portfolio-return" href="../../index.html" aria-label="Back to portfolio">← Back to portfolio</a>
 <canvas id="bgc"></canvas>
 <div class="grid"></div><div class="vig"></div><div class="scan"></div>
 <div class="frame"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
