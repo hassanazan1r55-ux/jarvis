@@ -153,5 +153,5 @@ addEventListener('keydown',e=>{
  else if(e.key==='Enter'&&document.activeElement===paletteInput){e.preventDefault();chooseCommand(activeIndex)}
 });
 /* Short page exit transition only for same-origin navigation; never blocks reduced-motion users. */
-if(!reduce){document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.origin!==location.origin||a.hash||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;const url=new URL(a.href);if(url.pathname===location.pathname)return;e.preventDefault();document.body.classList.add('page-leave');setTimeout(()=>location.href=a.href,130)})}
+if(!reduce){document.addEventListener('click',e=>{const a=e.target.closest('a');if(!a||e.defaultPrevented||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.origin!==location.origin||a.hash||a.id==='resume-link'||a.href.startsWith('mailto:')||a.href.startsWith('tel:'))return;const url=new URL(a.href);if(url.pathname===location.pathname||/\\.(pdf|png|jpe?g|svg|webp|zip)$/i.test(url.pathname))return;e.preventDefault();document.body.classList.add('page-leave');setTimeout(()=>location.href=a.href,130)})}
 })();
