@@ -4,9 +4,14 @@
   "description": "Projects, skills and contact of a student developer.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#02060d",
-  "theme_color": "#02060d",
+  "background_color": "#05080f",
+  "theme_color": "#05080f",
   "icons": [
-    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
   ]
 }
